@@ -14,4 +14,6 @@ class State {
     private:
         int estado_; // 0 si está muerta, 1 si está viva
 
-}
+};
+
+#endif
