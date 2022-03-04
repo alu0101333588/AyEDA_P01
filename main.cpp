@@ -16,22 +16,21 @@ int main() {
     int i = 0, j = 0;
 
     std::cout << "A continuación indica las posiciones de las células vivas (i,j)" << std::endl;
-    std::cout << "Cuando desees finalizar escribe -1" << std::endl;
+    std::cout << "****(Cuando desees finalizar escribe -1)****" << std::endl;
     while (i != -1) {
         std::cout << "Introduce (i,j): ";
         std::cin >> i;
-        //std::cout << " i,j:" << j << std::endl;
         if (i != -1){
             std::cin >> j;
         }  
         if(i != -1 && rejilla1.celulaViva(i, j)) {
-            std::cout << "Ha habido un error, introduce valores correctos";
+            std::cout << "Ha habido un error, introduce valores correctos. ";
         } else if (i != -1) {
             std::cout << "Subida. Correcta: (" << i << ", " << j << ")" << std::endl;
         }
     }
-    std::cout << "Has finalizado el proceso de subida de células vivas..." << std::endl;
-    //rejilla1.nextGeneration(rejilla1);
+    std::cout << std::endl << "Has finalizado el proceso de subida de células vivas..." << std::endl << std::endl;
+    rejilla1.nextGeneration(rejilla1);
 
     return 0;
 }
