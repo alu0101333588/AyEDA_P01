@@ -7,13 +7,13 @@
 int main() {
     unsigned int n = 0, m = 0;
     unsigned int nTurnos = 0;
-    std::cout << "Indica el tamaño de la rejilla (NxM): ";
-    std::cin >> n >> m;
+    std::cout << "Indica el tamaño de la rejilla (FilasxColumnas)(NxM): ";
+    std::cin >> n >> m; // Filas x Columnas (m filas. n columnas)
     std::cout << "Indica el número de turnos: ";
     std::cin >> nTurnos;
     Grid rejilla1(n, m, nTurnos);
     rejilla1.visualizacion();
-    int i = 0, j = 0;
+    int i = 0, j = 0; // i Filas, j Columnas
 
     std::cout << "A continuación indica las posiciones de las células vivas (i,j)" << std::endl;
     std::cout << "****(Cuando desees finalizar escribe -1)****" << std::endl;

@@ -34,7 +34,7 @@ int Cell::neighbors(const Grid& rejilla1) { // Indica el número de células vec
 
 std::ostream& operator<<(std::ostream& os, const Cell &celula1){
     if (celula1.getState().getState1() == 1) {
-        os << "X";
+        os << "X"; // en caso de estar viva
     } else {
         os << "-"; // TEMPORAL
     }

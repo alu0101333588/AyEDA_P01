@@ -35,7 +35,7 @@ bool Grid::celulaViva(int i, int j) {
 void Grid::nextGeneration(Grid& rejilla1){
 
     std::cout << "TURNO 0: " << std::endl << "  ";
-    for (int i = 0; i < n_-2; i++){ // Leyenda números parte superior
+    for (int i = 0; i < m_-2; i++){ // Leyenda números parte superior
         std::cout << i << " ";
     }
     std::cout << std::endl;
@@ -47,7 +47,7 @@ void Grid::nextGeneration(Grid& rejilla1){
         std::cout << std::endl;
     }
 
-    for (int i = 0; i < n_-2; i++){
+    for (int i = 0; i < m_-2; i++){
         std::cout << "__";
     }
     std::cout << std::endl;
@@ -63,6 +63,10 @@ void Grid::nextGeneration(Grid& rejilla1){
                         State estado4;
                         estado4.setViva();
                         rejilla_[i][j].setNextState(estado4);
+                    } else {
+                        State estado4;
+                        estado4.setMuerta();
+                        rejilla_[i][j].setNextState(estado4);
                     }
                 }
 
@@ -71,7 +75,11 @@ void Grid::nextGeneration(Grid& rejilla1){
                         State estado4;
                         estado4.setViva();
                         rejilla_[i][j].setNextState(estado4);
-                    } 
+                    } else {
+                        State estado4;
+                        estado4.setMuerta();
+                        rejilla_[i][j].setNextState(estado4);
+                    }
                 }
             } 
         }
@@ -84,7 +92,7 @@ void Grid::nextGeneration(Grid& rejilla1){
 
         std::cout << "TURNO " << turn << ":" << std::endl << "  ";
 
-        for (int i = 0; i < n_-2; i++){ // Leyenda números parte superior
+        for (int i = 0; i < m_-2; i++){ // Leyenda números parte superior
             std::cout << i << " ";
         }
         std::cout << std::endl;
@@ -95,7 +103,7 @@ void Grid::nextGeneration(Grid& rejilla1){
             } 
             std::cout << std::endl;
         }
-        for (int i = 0; i < n_-2; i++){
+        for (int i = 0; i < m_-2; i++){
             std::cout << "__";
         }
         std::cout << std::endl;
@@ -103,19 +111,24 @@ void Grid::nextGeneration(Grid& rejilla1){
 }
 
 void Grid::visualizacion() {
-    for (int i = 0; i < n_-2; i++){
+
+    // n_ Filas
+    // m_ Columnas
+
+    std::cout << "INFORME: n" << n_ << ". m" << m_ << " :: " << n_-2 << " : " << m_-2 << std::endl; 
+    for (int i = 0; i < m_-2; i++){
         std::cout << "_ ";
     }
     std::cout << std::endl;
-    for (int i = 0; i < n_-2; i++){
+    for (int i = 0; i < m_-2; i++){
         std::cout << i << " ";
     }
     std::cout << std::endl;
 
-    for (int j = 1; j < m_-2; j++) {
+    for (int j = 1; j < n_-2; j++) {
         std::cout << j << std::endl;
     }
-    for (int i = 0; i < n_-2; i++){
+    for (int i = 0; i < m_-2; i++){
         std::cout << "_ ";
     }
     std::cout << std::endl;
