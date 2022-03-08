@@ -59,7 +59,7 @@ void Grid::nextGeneration(Grid& rejilla1){
             for (int j = 1; j < m_-1; j++) {
                 State estado3 = rejilla_[i][j].getState();
                 if (estado3.getState1() == 0) {
-                    if (rejilla_[i][j].neighbors(rejilla1) == 3) {
+                    if (rejilla_[i][j].neighbors(rejilla1) == 4) { // Modificación en clase
                         State estado4;
                         estado4.setViva();
                         rejilla_[i][j].setNextState(estado4);
@@ -71,7 +71,7 @@ void Grid::nextGeneration(Grid& rejilla1){
                 }
 
                 if (estado3.getState1() == 1) {
-                    if (rejilla_[i][j].neighbors(rejilla1) == 2 || rejilla_[i][j].neighbors(rejilla1) == 3) {
+                    if (rejilla_[i][j].neighbors(rejilla1) == 3 || rejilla_[i][j].neighbors(rejilla1) == 4) { // Modificación en clase
                         State estado4;
                         estado4.setViva();
                         rejilla_[i][j].setNextState(estado4);

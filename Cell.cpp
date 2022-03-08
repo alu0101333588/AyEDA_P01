@@ -27,7 +27,29 @@ int Cell::neighbors(const Grid& rejilla1) { // Indica el número de células vec
             
         }
     }
-    //std::cout << "update (" << i_-1 << ", " << j_-1 << ") : " << contador << " :: " << std::endl;
+
+
+    State estado2 = rejilla1.getCell(i_-1,j_).getState();
+    if (estado2.getState1() == 1) {
+        contador++;
+    }  
+
+    estado2 = rejilla1.getCell(i_,j_-1).getState();
+    if (estado2.getState1() == 1) {
+        contador++;
+    }  
+
+    estado2 = rejilla1.getCell(i_,j_+1).getState();
+    if (estado2.getState1() == 1) {
+        contador++;
+    }  
+
+    estado2 = rejilla1.getCell(i_+1,j_).getState();
+    if (estado2.getState1() == 1) {
+        contador++;
+    }  
+
+
     return contador;
     
 }
@@ -36,7 +58,7 @@ std::ostream& operator<<(std::ostream& os, const Cell &celula1){
     if (celula1.getState().getState1() == 1) {
         os << "X"; // en caso de estar viva
     } else {
-        os << "-"; // TEMPORAL
+        os << " "; 
     }
     return os;
 }
